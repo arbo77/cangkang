@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
+    "generate:remote": "ng g application %npm_config_project% --routing --style=scss && ng add @angular-architects/module-federation --project  %npm_config_project% --port  %npm_config_port% --type remote && ng g m %npm_config_project% --project %npm_config_project% -m app --routing && ng g c %npm_config_project% -m %npm_config_project% --project %npm_config_project%"
   },
   "private": true,
   "dependencies": {
