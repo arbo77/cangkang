@@ -13,7 +13,6 @@ class DB extends Dexie {
 
     this.version(3).stores({
       todoLists: '++id',
-      todoItems: '++id, todoListId',
     });
   }
 }
@@ -32,8 +31,6 @@ export class AppComponent implements OnInit {
   todoLists$ = liveQuery(() => db.todoLists.toArray());
 
   ngOnInit() {
-    localStorage.setItem('shared', 'hello');
-
     this.todoLists$.subscribe((items: TodoList[]) => {
       this.dataCount = items.length;
     });

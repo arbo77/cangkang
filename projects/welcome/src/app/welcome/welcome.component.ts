@@ -13,7 +13,6 @@ class DB extends Dexie {
 
     this.version(3).stores({
       todoLists: '++id',
-      todoItems: '++id, todoListId',
     });
   }
 }
